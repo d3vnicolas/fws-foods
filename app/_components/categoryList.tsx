@@ -6,7 +6,7 @@ const CategoryList = async () => {
   const categories = await db.category.findMany({});
 
   return (
-    <Carousel className="pt-5">
+    <Carousel className="-mr-5 px-5 pt-5">
       <CarouselContent className="pb-1">
         {categories.map((category) => (
           <CarouselItem className="flex-none" key={category.id}>
