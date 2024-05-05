@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CategoryList from "./_components/categoryList";
 import Header from "./_components/header";
+import ProductList from "./_components/productList";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         sizes="100vw"
         quality={100}
       />
+      <ProductList />
     </>
   );
 }
