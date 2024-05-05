@@ -16,7 +16,7 @@ const ProductList = async () => {
     <Carousel className="-mr-5 px-5 pt-5">
       <CarouselContent className="pb-1">
         {products.map((product) => (
-          <CarouselItem key={product.id}>
+          <CarouselItem className="flex-none" key={product.id}>
             <ProductItem product={product} />
           </CarouselItem>
         ))}
