@@ -13,7 +13,7 @@ export default function Home() {
         alt="Até 30% de desconto"
         height={0}
         width={0}
-        className="h-auto w-full object-contain px-5 pt-5"
+        className="h-auto w-full object-contain p-5"
         sizes="100vw"
         quality={100}
       />
