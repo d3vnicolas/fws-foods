@@ -2,6 +2,7 @@ import { Prisma } from "@prisma/client";
 import { currencyBrazil } from "@/app/_helpers/formatCurrency";
 import Image from "next/image";
 import { calculateProductPriceDiscount } from "@/app/_helpers/price";
+import DiscountFlag from "./discountFlag";
 
 interface ProductItemProps {
   product: Prisma.ProductGetPayload<{
@@ -19,6 +20,7 @@ interface ProductItemProps {
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <div className="relative max-w-[150px]">
+      <DiscountFlag discountPercentage={product.discountPercentage} />
       <Image
         className="h-[150px] rounded-lg object-cover"
         src={product.imageUrl}
