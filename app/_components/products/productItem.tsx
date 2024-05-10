@@ -20,9 +20,11 @@ interface ProductItemProps {
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <div className="relative max-w-[150px]">
-      <DiscountFlag discountPercentage={product.discountPercentage} />
+      {product.discountPercentage != 0 && (
+        <DiscountFlag discountPercentage={product.discountPercentage} />
+      )}
       <Image
-        className="h-[150px] rounded-lg object-cover"
+        className="h-[150px] rounded-lg object-cover shadow-sm"
         src={product.imageUrl}
         alt={product.name}
         height={150}
@@ -33,9 +35,11 @@ const ProductItem = ({ product }: ProductItemProps) => {
         <span className="text-base font-semibold">
           {currencyBrazil(calculateProductPriceDiscount(product))}
         </span>
-        <span className="text-sm font-normal text-muted-foreground line-through">
-          {currencyBrazil(Number(product.price))}
-        </span>
+        {product.discountPercentage != 0 && (
+          <span className="text-sm font-normal text-muted-foreground line-through">
+            {currencyBrazil(Number(product.price))}
+          </span>
+        )}
       </div>
       <h3 className="truncate text-sm font-normal text-muted-foreground">
         {product.restaurant.name}

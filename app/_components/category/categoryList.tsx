@@ -1,6 +1,10 @@
-import { db } from "../_lib/prisma";
-import CategoryItem from "./categoryItem";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import { db } from "@/app/_lib/prisma";
+import CategoryItem from "@/app/_components/category/categoryItem";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/app/_components/ui/carousel";
 
 const CategoryList = async () => {
   const categories = await db.category.findMany({});

@@ -1,32 +1,27 @@
 import { ChevronRight } from "lucide-react";
-import { db } from "../_lib/prisma";
 import ProductItem from "./productItem";
-import { Button } from "./ui/button";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import { Button } from "../ui/button";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import { Prisma } from "@prisma/client";
 
-const ProductList = async () => {
-  const products = await db.product.findMany({
+interface ProductListProps {
+  title: string;
+  products: Prisma.ProductGetPayload<{
     include: {
       restaurant: {
         select: {
-          name: true,
-        },
-      },
-    },
-    where: {
-      discountPercentage: {
-        gt: 0,
-      },
-    },
-    take: 10,
-  });
+          name: true;
+        };
+      };
+    };
+  }>[];
+}
 
+const ProductList = async ({ title, products }: ProductListProps) => {
   return (
     <div className="flex flex-col gap-4 px-5">
       <div className="flex items-baseline justify-between">
-        <h2 className="text-base font-semibold text-foreground">
-          Pedidos Recomendados
-        </h2>
+        <h2 className="text-base font-semibold text-foreground">{title}</h2>
         <Button
           className="h-fit border-none bg-transparent p-0 text-xs text-destructive hover:bg-transparent hover:text-destructive hover:underline"
           variant={"outline"}
