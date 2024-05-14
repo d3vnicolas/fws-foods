@@ -3,6 +3,7 @@ import { Restaurant } from "@prisma/client";
 import Image from "next/image";
 import RatingFlag from "@/app/_components/reviews/ratingFlag";
 import Favorite from "@/app/_components/favorite";
+import Link from "next/link";
 
 interface RestaurantItemProps {
   restaurant: Restaurant;
@@ -10,7 +11,10 @@ interface RestaurantItemProps {
 
 const RestaurantItem = ({ restaurant }: RestaurantItemProps) => {
   return (
-    <div className="relative flex flex-col">
+    <Link
+      href={`/restaurante/${restaurant.id}`}
+      className="relative flex flex-col"
+    >
       <div>
         <Image
           alt={restaurant.name}
@@ -55,7 +59,7 @@ const RestaurantItem = ({ restaurant }: RestaurantItemProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
