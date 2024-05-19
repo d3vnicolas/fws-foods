@@ -58,4 +58,8 @@
   html {
     @apply text-foreground antialiased overflow-x-hidden;
   }
+
+  .w-calc50-8 {
+    width: calc(50% - 8px);
+  }
 }
