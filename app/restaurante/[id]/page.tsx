@@ -14,6 +14,37 @@ const RestaurantePage = async ({ params: { id } }: RestaurantePageProps) => {
     where: {
       id,
     },
+    include: {
+      categories: {
+        orderBy: {
+          createdAt: "desc",
+        },
+        include: {
+          products: {
+            where: {
+              restaurantId: id,
+            },
+            include: {
+              restaurant: {
+                select: {
+                  name: true,
+                },
+              },
+            },
+          },
+        },
+      },
+      products: {
+        take: 10,
+        include: {
+          restaurant: {
+            select: {
+              name: true,
+            },
+          },
+        },
+      },
+    },
   });
 
   if (!restaurant) {
@@ -23,7 +54,11 @@ const RestaurantePage = async ({ params: { id } }: RestaurantePageProps) => {
   return (
     <div>
       <TopBackground restaurant={restaurant} />
-      <RestaurantContentCard restaurant={restaurant} />
+      <RestaurantContentCard
+        restaurant={restaurant}
+        categories={restaurant.categories}
+        products={restaurant.products}
+      />
     </div>
   );
 };

@@ -20,14 +20,16 @@ const TopBackground = ({ restaurant }: TopBackgroundProps) => {
 
   return (
     <div className="relative h-[216px] w-full px-5 pt-6">
-      <Button
-        className="h-10 w-10 rounded-full bg-white p-0"
-        onClick={handleBackButton}
-        variant="ghost"
-      >
-        <ChevronLeft size={14} stroke="#323232" />
-      </Button>
-      <Favorite className="right-5 top-5 h-10 min-w-10" size={22} />
+      <div className="flex items-center justify-between">
+        <Button
+          className="h-10 w-10 rounded-full bg-white p-0"
+          onClick={handleBackButton}
+          variant="ghost"
+        >
+          <ChevronLeft size={14} stroke="#323232" />
+        </Button>
+        <Favorite className="!static h-10 min-w-10" size={22} />
+      </div>
       <Image
         src={restaurant.imageUrl}
         fill

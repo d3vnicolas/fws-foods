@@ -1,7 +1,11 @@
 import { ChevronRight } from "lucide-react";
 import ProductItem from "./productItem";
-import { Button } from "../ui/button";
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import { Button } from "@/app/_components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/app/_components/ui/carousel";
 import { Prisma } from "@prisma/client";
 
 interface ProductListProps {
@@ -15,11 +19,16 @@ interface ProductListProps {
       };
     };
   }>[];
+  className?: string;
 }
 
-const ProductList = async ({ title, products }: ProductListProps) => {
+const ProductList = async ({
+  title,
+  products,
+  className,
+}: ProductListProps) => {
   return (
-    <div className="flex flex-col gap-4 px-5">
+    <div className={`flex flex-col gap-4 px-5 ${className}`}>
       <div className="flex items-baseline justify-between">
         <h2 className="text-base font-semibold text-foreground">{title}</h2>
         <Button
