@@ -21,7 +21,7 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
   }
 
   return (
-    <div>
+    <div className="flex h-full flex-col">
       <TopBackground product={product} />
       <ProductContentCard product={product} />
     </div>

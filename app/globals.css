@@ -20,7 +20,7 @@
   --destructive: #EA1D2C;
   --destructive-foreground: #fff;
   --border: #d9e3ef;
-  --input: #80b0cc;
+  --input: #eee;
   --ring: #ff6e6e;
   --radius: 0.75rem;
 }
@@ -56,7 +56,7 @@
 
   body,
   html {
-    @apply text-foreground antialiased overflow-x-hidden;
+    @apply text-foreground antialiased overflow-x-hidden h-[100vh];
   }
 
   .w-calc50-8 {

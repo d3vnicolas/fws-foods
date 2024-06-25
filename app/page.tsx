@@ -35,17 +35,19 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <CategoryList />
-      <Banner src="/Banner-01.png" alt="Até 30% de desconto" />
-      <ProductList
-        title="Produtos Recomendados"
-        products={recomendedProducts}
-      />
-      <Banner src="/Banner-02.png" alt="A partir de R$17,90 em lanches" />
-      <RestaurantList
-        title="Restaurantes Recomendados"
-        restaurants={recomendedRestaurants}
-      />
+      <main className="px-5">
+        <CategoryList />
+        <Banner src="/Banner-01.png" alt="Até 30% de desconto" />
+        <ProductList
+          title="Produtos Recomendados"
+          products={recomendedProducts}
+        />
+        <Banner src="/Banner-02.png" alt="A partir de R$17,90 em lanches" />
+        <RestaurantList
+          title="Restaurantes Recomendados"
+          restaurants={recomendedRestaurants}
+        />
+      </main>
     </>
   );
 }

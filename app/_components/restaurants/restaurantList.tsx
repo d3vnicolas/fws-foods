@@ -15,7 +15,7 @@ interface RestaurantListProps {
 
 const RestaurantList = async ({ restaurants, title }: RestaurantListProps) => {
   return (
-    <div className="flex flex-col gap-4 px-5">
+    <div className="flex flex-col gap-4">
       <div className="flex items-baseline justify-between">
         <h2 className="text-base font-semibold text-foreground">{title}</h2>
         <Button
