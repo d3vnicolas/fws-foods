@@ -3,6 +3,7 @@ import { currencyBrazil } from "@/app/_helpers/formatCurrency";
 import Image from "next/image";
 import { calculateProductPriceDiscount } from "@/app/_helpers/price";
 import DiscountFlag from "./discountFlag";
+import Link from "next/link";
 
 interface ProductItemProps {
   product: Prisma.ProductGetPayload<{
@@ -19,7 +20,7 @@ interface ProductItemProps {
 
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
-    <div className="relative max-w-[150px]">
+    <Link href={`/produto/${product.id}`} className="relative max-w-[150px]">
       {product.discountPercentage != 0 && (
         <DiscountFlag discountPercentage={product.discountPercentage} />
       )}
@@ -44,7 +45,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
       <h3 className="truncate text-sm font-normal text-muted-foreground">
         {product.restaurant.name}
       </h3>
-    </div>
+    </Link>
   );
 };
 

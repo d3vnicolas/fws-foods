@@ -20,23 +20,27 @@ interface ProductListProps {
     };
   }>[];
   className?: string;
+  showMoreLink?: string;
 }
 
 const ProductList = async ({
   title,
   products,
   className,
+  showMoreLink,
 }: ProductListProps) => {
   return (
-    <div className={`flex flex-col gap-4 px-5 ${className}`}>
+    <div className={`flex flex-col gap-4 ${className}`}>
       <div className="flex items-baseline justify-between">
         <h2 className="text-base font-semibold text-foreground">{title}</h2>
-        <Button
-          className="h-fit border-none bg-transparent p-0 text-xs text-destructive hover:bg-transparent hover:text-destructive hover:underline"
-          variant={"outline"}
-        >
-          Ver todos <ChevronRight size={14} />
-        </Button>
+        {showMoreLink && (
+          <Button
+            className="h-fit border-none bg-transparent p-0 text-xs text-destructive hover:bg-transparent hover:text-destructive hover:underline"
+            variant={"outline"}
+          >
+            Ver todos <ChevronRight size={14} />
+          </Button>
+        )}
       </div>
       <Carousel className="-mr-5">
         <CarouselContent className="pb-1">

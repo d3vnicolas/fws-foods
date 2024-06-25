@@ -25,7 +25,7 @@ const RestaurantContentCard = ({
   products,
 }: RestaurantContentCardProps) => {
   return (
-    <div className="-mt-4 w-full rounded-lg rounded-t-2xl bg-white p-5">
+    <div className="-mt-4 flex w-full flex-1 flex-col rounded-lg rounded-t-2xl bg-white p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <Image

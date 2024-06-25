@@ -12,7 +12,7 @@ const Banner = ({ src, alt }: BannerItemProps) => {
       alt={alt}
       height={0}
       width={0}
-      className="h-auto w-full object-contain p-5"
+      className="h-auto w-full object-contain py-5"
       sizes="100vw"
       quality={100}
     />

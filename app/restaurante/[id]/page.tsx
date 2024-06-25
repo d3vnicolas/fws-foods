@@ -52,7 +52,7 @@ const RestaurantePage = async ({ params: { id } }: RestaurantePageProps) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col">
       <TopBackground restaurant={restaurant} />
       <RestaurantContentCard
         restaurant={restaurant}
