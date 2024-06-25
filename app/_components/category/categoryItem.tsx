@@ -9,7 +9,7 @@ interface CategoryItemProps {
 const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
     <Link
-      href={`categorias/${category.id}`}
+      href={`categoria/${category.id}`}
       className="flex min-h-14 w-fit items-center gap-3 rounded-full px-4 shadow-md"
     >
       <Image
